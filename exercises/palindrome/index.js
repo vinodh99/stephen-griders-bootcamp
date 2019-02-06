@@ -7,6 +7,16 @@
 //   palindrome("abba") === true
 //   palindrome("abcdefg") === false
 
-function palindrome(str) {}
-
+function palindrome(str) {
+  let arr = str.split("");
+  let rev = arr.reverse();
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] !== rev[i]) {
+      debugger;
+      return false;
+    }
+  }
+  return true;
+}
+palindrome("Fish hsif");
 module.exports = palindrome;
