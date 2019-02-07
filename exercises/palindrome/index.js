@@ -8,15 +8,17 @@
 //   palindrome("abcdefg") === false
 
 function palindrome(str) {
-  let arr = str.split("");
-  let rev = arr.reverse();
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] !== rev[i]) {
-      debugger;
-      return false;
-    }
-  }
-  return true;
+  str.split("").every((el, i) => {
+    return el === str[str.length - i - 1];
+  });
 }
-palindrome("Fish hsif");
+
 module.exports = palindrome;
+
+// function palindrome(str) {
+//     let reverse = str
+//       .split("")
+//       .reverse()
+//       .join("");
+//     return reverse === str ? true : false;
+//   }
