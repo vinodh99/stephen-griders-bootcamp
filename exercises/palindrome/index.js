@@ -8,7 +8,8 @@
 //   palindrome("abcdefg") === false
 
 function palindrome(str) {
-  str.split("").every((el, i) => {
+  return str.split("").every((el, i) => {
+    debugger;
     return el === str[str.length - i - 1];
   });
 }
