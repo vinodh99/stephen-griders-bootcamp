@@ -9,9 +9,10 @@
 
 function capitalize(str) {
   let words = str.split(" ").map(word => {
-    let cap = word.split("");
-    cap[0] = cap[0].toUpperCase();
-    return cap.join("");
+    // let cap = word.split("");
+    // cap[0] = cap[0].toUpperCase();
+    // return cap.join("");
+    return word[0].toUpperCase() + word.slice(1);
   });
   return words.join(" ");
 }
