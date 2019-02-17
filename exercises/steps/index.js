@@ -26,8 +26,8 @@ function steps(n) {
       } else {
         stairs += " ";
       }
-      console.log(stairs);
     }
+    console.log(stairs);
   }
 }
 // function steps(n) {
