@@ -23,6 +23,7 @@ class Stack {
   peek() {
     return this.data[this.data.length - 1];
   }
+  lsdfkj;
 }
 
 module.exports = Stack;
