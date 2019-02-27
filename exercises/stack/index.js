@@ -15,7 +15,7 @@ class Stack {
     this.data = [];
   }
   push(record) {
-    return this.data.push(record);
+    this.data.push(record);
   }
   pop() {
     return this.data.pop();
@@ -23,7 +23,6 @@ class Stack {
   peek() {
     return this.data[this.data.length - 1];
   }
-  lsdfkj;
 }
 
 module.exports = Stack;
