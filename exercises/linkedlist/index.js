@@ -66,6 +66,27 @@ class LinkedList {
     }
     previous.next = null;
   }
+  insertLast(data) {
+    let last = this.getLast();
+    if (last) {
+      // there are some existing nodes in our chain
+      last.next = new Node(data);
+    } else {
+      this.head = new Node(data);
+    }
+  }
+  getAt(index) {
+    let counter = 0;
+    let node = this.head;
+    while (node) {
+      if (counter === index) {
+        return node;
+      }
+      node = node.next;
+      counter++;
+    }
+    return null;
+  }
 }
 const list = new LinkedList();
 list.head = new Node(10);
