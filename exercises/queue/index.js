@@ -20,5 +20,4 @@ class Queue {
     return this.data.pop();
   }
 }
-
 module.exports = Queue;

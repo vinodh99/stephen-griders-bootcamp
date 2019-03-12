@@ -118,7 +118,6 @@ class LinkedList {
     previous.next = node;
     return;
   }
-  forEach(fn) {}
   forEach(fn) {
     let node = this.head;
     let counter = 0;
@@ -126,6 +125,13 @@ class LinkedList {
       fn(node, counter);
       node = node.next;
       counter++;
+    }
+  }
+  *[Symbol.iterator]() {
+    let node = this.head;
+    while (node) {
+      yield node;
+      node = node.next;
     }
   }
 }
