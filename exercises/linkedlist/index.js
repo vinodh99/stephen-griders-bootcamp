@@ -137,6 +137,10 @@ class LinkedList {
 }
 const list = new LinkedList();
 list.head = new Node(10);
-list.insertFirst("hey");
+
+
+// for (let node of l) {
+//   node.data += 10;
+// }
 
 module.exports = { Node, LinkedList };
