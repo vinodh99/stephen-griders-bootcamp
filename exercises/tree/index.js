@@ -18,8 +18,25 @@ class Node {
   add(data) {
     this.children.push(new Node(data));
   }
+  remove(data) {
+    this.children = this.children.filter(node => {
+      return node.data !== data;
+    });
+  }
 }
 
-class Tree {}
+class Tree {
+  constructor() {
+    this.root = null;
+  }
+  traverseBF(fn) {
+    let arr = [this.root];
+    while (arr.length) {
+      fn(arr[0]);
+      arr.push(arr[0].children);
+      arr.shift();
+    }
+  }
+}
 
 module.exports = { Tree, Node };
