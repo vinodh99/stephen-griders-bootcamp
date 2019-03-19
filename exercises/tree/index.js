@@ -30,11 +30,19 @@ class Tree {
     this.root = null;
   }
   traverseBF(fn) {
-    let arr = [this.root];
+    const arr = [this.root];
     while (arr.length) {
-      fn(arr[0]);
-      arr.push(arr[0].children);
-      arr.shift();
+      const node = arr.shift();
+      arr.push(...node.children);
+      fn(node);
+    }
+  }
+  traverseDF(fn) {
+    const arr = [this.root];
+    while (arr.length) {
+      const node = arr.shift();
+      arr.unshift(...node.children);
+      fn(node);
     }
   }
 }
