@@ -14,10 +14,44 @@ function bubbleSort(arr) {
   return arr;
 }
 
-function selectionSort(arr) {}
+function selectionSort(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    let indexOfMin = i;
+    for (let j = i + 1; j < arr.length; j++) {
+      if (arr[j] < arr[indexOfMin]) {
+        indexOfMin = j;
+      }
+    }
+    if (indexOfMin !== i) {
+      temp = arr[indexOfMin];
+      arr[indexOfMin] = arr[i];
+      arr[i] = temp;
+    }
+  }
+  return arr;
+}
 
-function mergeSort(arr) {}
+function mergeSort(arr) {
+  if (arr.length === 1) {
+    return arr;
+  }
+  const center = Math.floor(arr.length / 2); //[1,2,3,4] the center would be 3 but when slicing we slice it upto the before element
+  const left = arr.slice(0, center); //not including center
+  const right = arr.slice(center);
 
-function merge(left, right) {}
+  return merge(mergeSort(left), mergeSort(right));
+}
+
+function merge(left, right) {
+  let results = [];
+  while (left.length && right.length) {
+    if (left[0] < right[0]) {
+      results.push(left.shift());
+    } else {
+      results.push(right.shift());
+    }
+  }
+  return [...results, ...right, ...left];
+}
 
 module.exports = { bubbleSort, selectionSort, mergeSort, merge };
